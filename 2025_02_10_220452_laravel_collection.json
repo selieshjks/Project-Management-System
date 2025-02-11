@@ -1,0 +1,827 @@
+{
+	"info": {
+		"_postman_id": "437a239b-3d98-43c4-bff3-2b2f8585813a",
+		"name": "2025_02_10_220452_laravel_collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"john@example.com\",\r\n    \"password\": \"password123\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"email\": \"john@example.com\",\r\n    \"password\": \"password123\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/user",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/logout",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/projects",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/projects?filters[status]=active",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"projects"
+					],
+					"query": [
+						{
+							"key": "filters[name]",
+							"value": "Beta",
+							"disabled": true
+						},
+						{
+							"key": "filters[status]",
+							"value": "active"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/projects",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Project Beta\",\r\n  \"status\": \"active\",\r\n  \"attributes\": {\r\n    \"1\": \"Department B\",    // Attribute ID 1 is for Department\r\n    \"2\": \"2024-02-15\",      // Attribute ID 2 is for Start Date\r\n    \"3\": \"2024-10-20\"       // Attribute ID 3 is for End Date\r\n  }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/projects",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/projects/{project}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/projects/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"projects",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/projects/{project}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"New Project Name\",\r\n  \"status\": \"active\",\r\n  \"attributes\": {\r\n    \"1\": \"Department A\",    // Attribute ID 1 is for Department\r\n    \"2\": \"2023-01-01\",      // Attribute ID 2 is for Start Date\r\n    \"3\": \"2023-12-31\"       // Attribute ID 3 is for End Date\r\n  }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/projects/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"projects",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/projects/{project}",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Updated Project Name\",\r\n  \"status\": \"completed\",\r\n  \"attributes\": {\r\n    \"1\": \"New Department Name\", // Attribute ID 1 is for Department\r\n    \"2\": \"2025-01-01\",          // Attribute ID 2 is for Start Date\r\n    \"3\": \"2025-12-31\"           // Attribute ID 3 is for End Date\r\n  }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/projects/6",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"projects",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/projects/{project}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/projects/3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"projects",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/timesheets",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/api/timesheets?filters[user_id]=2&filters[project_id]=6&filters[date]=2024-02-11",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"timesheets"
+					],
+					"query": [
+						{
+							"key": "filters[user_id]",
+							"value": "2"
+						},
+						{
+							"key": "filters[project_id]",
+							"value": "6"
+						},
+						{
+							"key": "filters[date]",
+							"value": "2024-02-11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/timesheets",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"task_name\":\"Test Task\",\r\n    \"date\": \"2024-02-11\",\r\n    \"hours\": 5,\r\n    \"project_id\": 6,\r\n    \"user_id\": 2\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/timesheets",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"timesheets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/timesheets/{timesheet}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/timesheets/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"timesheets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/timesheets/{timesheet}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"task_name\":\"Test Task 1\",\r\n    \"date\": \"2024-02-11\",\r\n    \"hours\": 5,\r\n    \"project_id\": 4,\r\n    \"user_id\": 2\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/timesheets/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"timesheets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/timesheets/{timesheet}",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"task_name\":\"Test Task 1\",\r\n    \"date\": \"2024-02-11\",\r\n    \"hours\": 5,\r\n    \"project_id\": 4,\r\n    \"user_id\": 2\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/timesheets/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"timesheets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/timesheets/{timesheet}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/timesheets/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"timesheets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/attributes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/attributes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"attributes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/attributes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"End Date 1\",\r\n  \"type\": \"select\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/attributes",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"attributes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/attributes/{attribute}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/attributes/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"attributes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/attributes/{attribute}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"End Date 1\",\r\n  \"type\": \"select\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/attributes/3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"attributes",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/attributes/{attribute}",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"End Date 1\",\r\n  \"type\": \"select\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/attributes/3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"attributes",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/attributes/{attribute}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/attributes/4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"attributes",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost"
+		}
+	]
+}

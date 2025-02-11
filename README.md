@@ -174,7 +174,10 @@ Authorization: Bearer {token}
 ```
 
 ## Postman JSON
-Postman JSON file is in storage/app/private/postman/2025_02_10_220452_laravel_collection.json. 
+Postman JSON file is in 2025_02_10_220452_laravel_collection.json. 
+
+## SQL Dump
+SQL Dump file is in project_management_system.sql. 
 
 ## License
 This project is open-source and available under the [MIT License](LICENSE).
