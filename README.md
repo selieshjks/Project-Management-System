@@ -33,7 +33,7 @@ This project is a Project Management System built with Laravel, providing core f
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/project-management-system.git
+   git clone https://github.com/selieshjks/project-management-system.git
    cd project-management-system
    ```
 
